@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map Editor — STS Seed Recorder</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="map-page">
+
+  <!-- Top bar -->
+  <header class="map-header">
+    <a href="/" class="btn btn-secondary back-btn">← Back</a>
+    <div class="map-header-title">
+      <span id="header-seed-value" class="seed-value-display"></span>
+      <span id="header-seed-name" class="seed-name-display"></span>
+    </div>
+    <div class="map-header-actions">
+      <button id="btn-connect-mode" class="btn btn-secondary" title="Toggle connection drawing mode (C)">
+        Connect Mode
+      </button>
+    </div>
+  </header>
+
+  <!-- Act tabs -->
+  <nav class="act-tabs">
+    <button class="act-tab active" data-act="1">Act 1</button>
+    <button class="act-tab" data-act="2">Act 2</button>
+    <button class="act-tab" data-act="3">Act 3</button>
+  </nav>
+
+  <div class="map-layout">
+
+    <!-- Left: node type toolbar -->
+    <aside class="node-toolbar">
+      <div class="toolbar-label">Node Type</div>
+      <button class="node-type-btn active" data-type="monster"    title="Monster (M)">
+        <span class="node-icon monster"></span> Monster
+      </button>
+      <button class="node-type-btn" data-type="elite"     title="Elite (E)">
+        <span class="node-icon elite"></span> Elite
+      </button>
+      <button class="node-type-btn" data-type="rest"      title="Rest (R)">
+        <span class="node-icon rest"></span> Rest
+      </button>
+      <button class="node-type-btn" data-type="shop"      title="Shop (S)">
+        <span class="node-icon shop"></span> Shop
+      </button>
+      <button class="node-type-btn" data-type="event"     title="Event (V)">
+        <span class="node-icon event"></span> Event
+      </button>
+      <button class="node-type-btn" data-type="treasure"  title="Treasure (T)">
+        <span class="node-icon treasure"></span> Treasure
+      </button>
+      <button class="node-type-btn" data-type="boss"      title="Boss (B)">
+        <span class="node-icon boss"></span> Boss
+      </button>
+      <button class="node-type-btn" data-type="ancient"   title="Ancient (A)">
+        <span class="node-icon ancient"></span> Ancient
+      </button>
+
+      <div class="toolbar-divider"></div>
+      <div class="toolbar-hint">
+        <kbd>Click</kbd> cell → place node<br>
+        <kbd>Click</kbd> node → select<br>
+        <kbd>Right-click</kbd> node → menu<br>
+        <kbd>C</kbd> → connect mode<br>
+        <kbd>Del</kbd> → delete selected
+      </div>
+    </aside>
+
+    <!-- Center: map grid + SVG overlay -->
+    <div class="map-canvas-wrapper">
+      <div id="map-grid-container" class="map-grid-container">
+        <!-- SVG for connection lines, positioned absolute over the grid -->
+        <svg id="connections-svg" class="connections-svg"></svg>
+        <!-- Grid cells rendered by JS -->
+        <div id="map-grid" class="map-grid"></div>
+      </div>
+    </div>
+
+    <!-- Right: detail panel -->
+    <aside class="detail-panel" id="detail-panel">
+      <div id="detail-empty" class="detail-empty">
+        <p>Select a node to view details.</p>
+      </div>
+      <div id="detail-content" style="display:none">
+        <h3>Node Detail</h3>
+        <div class="detail-row">
+          <label>Type</label>
+          <select id="detail-type">
+            <option value="monster">Monster</option>
+            <option value="elite">Elite</option>
+            <option value="rest">Rest</option>
+            <option value="shop">Shop</option>
+            <option value="event">Event</option>
+            <option value="treasure">Treasure</option>
+            <option value="boss">Boss</option>
+            <option value="ancient">Ancient</option>
+          </select>
+        </div>
+        <div class="detail-row">
+          <label>Floor / Col</label>
+          <span id="detail-floor-col" class="detail-info"></span>
+        </div>
+        <div class="detail-row">
+          <label>On Path</label>
+          <input type="checkbox" id="detail-on-path" />
+        </div>
+        <div class="detail-row detail-notes-row">
+          <label>Notes</label>
+          <textarea id="detail-notes" placeholder="Add notes…" rows="4"></textarea>
+        </div>
+        <button id="btn-delete-node" class="btn btn-danger btn-full">Delete Node</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Context menu -->
+  <div id="context-menu" class="context-menu" style="display:none">
+    <ul>
+      <li id="ctx-change-type">Change Type →
+        <ul class="context-submenu" id="ctx-type-submenu"></ul>
+      </li>
+      <li id="ctx-toggle-path">Toggle On Path</li>
+      <li id="ctx-delete-node" class="ctx-danger">Delete Node</li>
+    </ul>
+  </div>
+
+  <div id="map-loading" class="loading" style="display:none">Loading map…</div>
+  <div id="toast" class="toast" style="display:none"></div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/map-editor.js"></script>
+</body>
+</html>
