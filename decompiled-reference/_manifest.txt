@@ -1,0 +1,1028 @@
+STS2 map-generation extraction
+Source: E:\sts2-decompiled
+Files: 1024
+
+MegaCrit.Sts2.Core.Animation\CreatureAnimator.cs	content: NextFloat
+MegaCrit.Sts2.Core.Assets\AssetSets.cs	content: MapNode, RestSiteRoom, mapNodes
+MegaCrit.Sts2.Core.Audio.Debug\NDebugAudioManager.cs	content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Audio\FmodSfx.cs	content: MapNode
+MegaCrit.Sts2.Core.AutoSlay.Handlers.Rooms\CombatRoomHandler.cs	path; content: RoomType\.Elite, RoomType\.Monster, RoomType\.Boss
+MegaCrit.Sts2.Core.AutoSlay.Handlers.Rooms\EventRoomHandler.cs	path; content: RoomType\.Event
+MegaCrit.Sts2.Core.AutoSlay.Handlers.Rooms\RestSiteRoomHandler.cs	path; content: RoomType\.Rest, RestSiteRoom
+MegaCrit.Sts2.Core.AutoSlay.Handlers.Rooms\ShopRoomHandler.cs	path; content: RoomType\.Shop
+MegaCrit.Sts2.Core.AutoSlay.Handlers.Rooms\TreasureRoomHandler.cs	path; content: RoomType\.Treasure
+MegaCrit.Sts2.Core.AutoSlay.Handlers.Rooms\VictoryRoomHandler.cs	path
+MegaCrit.Sts2.Core.AutoSlay.Handlers.Screens\MapScreenHandler.cs	path; content: \.children\b
+MegaCrit.Sts2.Core.AutoSlay.Handlers\IRoomHandler.cs	path
+MegaCrit.Sts2.Core.AutoSlay\AutoSlayer.cs	content: RoomType\.Rest, RoomType\.Elite, RoomType\.Monster
+MegaCrit.Sts2.Core.Bindings.MegaSpine\MegaSlotNode.cs	path
+MegaCrit.Sts2.Core.Combat\CombatManager.cs	content: RoomType\.Boss, AddChild
+MegaCrit.Sts2.Core.Commands.Builders\AttackCommand.cs	content: AddChild
+MegaCrit.Sts2.Core.Commands\CardCmd.cs	content: AddChild
+MegaCrit.Sts2.Core.Commands\CardPileCmd.cs	content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Commands\CreatureCmd.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Commands\ForgeCmd.cs	content: AddChild
+MegaCrit.Sts2.Core.Commands\MapCmd.cs	path
+MegaCrit.Sts2.Core.Commands\TalkCmd.cs	content: AddChild
+MegaCrit.Sts2.Core.Commands\ThinkCmd.cs	content: AddChild
+MegaCrit.Sts2.Core.Commands\VfxCmd.cs	content: AddChild
+MegaCrit.Sts2.Core.ControllerInput\ControllerMappingType.cs	path
+MegaCrit.Sts2.Core.Debug\DebugActMap.cs	path; content: GenerateMap
+MegaCrit.Sts2.Core.Debug\NBgLayerDebug.cs	content: AddChild
+MegaCrit.Sts2.Core.Debug\NCombatVfxSpawner.cs	content: AddChild
+MegaCrit.Sts2.Core.Debug\NDebugVfxSpawner.cs	content: AddChild
+MegaCrit.Sts2.Core.Debug\NTrailTest.cs	content: AddChild
+MegaCrit.Sts2.Core.Debug\SentryService.cs	content: RestSiteRoom, NextDouble
+MegaCrit.Sts2.Core.DevConsole.ConsoleCommands\AncientConsoleCmd.cs	content: RoomType\.Event
+MegaCrit.Sts2.Core.DevConsole.ConsoleCommands\EventConsoleCmd.cs	content: RoomType\.Event
+MegaCrit.Sts2.Core.DevConsole.ConsoleCommands\FightConsoleCmd.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.DevConsole.ConsoleCommands\RoomConsoleCmd.cs	path
+MegaCrit.Sts2.Core.Entities.Merchant\MerchantCardEntry.cs	content: NextFloat
+MegaCrit.Sts2.Core.Entities.Merchant\MerchantPotionEntry.cs	content: NextFloat
+MegaCrit.Sts2.Core.Entities.Merchant\MerchantRelicEntry.cs	content: NextFloat
+MegaCrit.Sts2.Core.Entities.Players\Player.cs	content: AddChild
+MegaCrit.Sts2.Core.Entities.RestSite\CloneRestSiteOption.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Entities.RestSite\DigRestSiteOption.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Entities.RestSite\HatchRestSiteOption.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Entities.RestSite\HealRestSiteOption.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Entities.RestSite\LiftRestSiteOption.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Entities.RestSite\MendRestSiteOption.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Entities.RestSite\SmithRestSiteOption.cs	content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Entities.Rngs\PlayerRngType.cs	path
+MegaCrit.Sts2.Core.Entities.Rngs\RunRngType.cs	path
+MegaCrit.Sts2.Core.Events\EventLayoutType.cs	path
+MegaCrit.Sts2.Core.Factories\CardFactory.cs	content: NextFloat
+MegaCrit.Sts2.Core.Factories\PotionFactory.cs	content: NextFloat
+MegaCrit.Sts2.Core.Factories\RelicFactory.cs	content: NextFloat
+MegaCrit.Sts2.Core.GameActions\MoveToMapCoordAction.cs	path
+MegaCrit.Sts2.Core.GameActions\NetMoveToMapCoordAction.cs	path
+MegaCrit.Sts2.Core.GameActions\NetVoteForMapCoordAction.cs	path
+MegaCrit.Sts2.Core.GameActions\VoteForMapCoordAction.cs	path
+MegaCrit.Sts2.Core.Helpers\GodotTreeExtensions.cs	content: AddChild
+MegaCrit.Sts2.Core.Helpers\GrabBag.cs	content: NextDouble
+MegaCrit.Sts2.Core.Helpers\ImageHelper.cs	content: RoomType\.Event, RoomType\.Boss
+MegaCrit.Sts2.Core.Helpers\SeedHelper.cs	path; content: SeedHelper
+MegaCrit.Sts2.Core.Localization.Fonts.FontPathSets\JpnFontPathSet.cs	path
+MegaCrit.Sts2.Core.Localization.Fonts.FontPathSets\KorFontPathSet.cs	path
+MegaCrit.Sts2.Core.Localization.Fonts.FontPathSets\RusFontPathSet.cs	path
+MegaCrit.Sts2.Core.Localization.Fonts.FontPathSets\ThaFontPathSet.cs	path
+MegaCrit.Sts2.Core.Localization.Fonts.FontPathSets\ZhsFontPathSet.cs	path
+MegaCrit.Sts2.Core.Localization.Fonts\FontPathSet.cs	path
+MegaCrit.Sts2.Core.Map\ActMap.cs	path
+MegaCrit.Sts2.Core.Map\GoldenPathActMap.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Map\MapCoord.cs	path
+MegaCrit.Sts2.Core.Map\MapPathPruning.cs	path; content: MapPath, \.parents\b, \.children\b
+MegaCrit.Sts2.Core.Map\MapPoint.cs	path; content: \.parents\b, \.children\b, AddChild
+MegaCrit.Sts2.Core.Map\MapPointState.cs	path
+MegaCrit.Sts2.Core.Map\MapPointType.cs	path
+MegaCrit.Sts2.Core.Map\MapPointTypeCounts.cs	path
+MegaCrit.Sts2.Core.Map\MapPostProcessing.cs	path; content: \.parents\b, \.children\b
+MegaCrit.Sts2.Core.Map\MockActMap.cs	path
+MegaCrit.Sts2.Core.Map\NullActMap.cs	path
+MegaCrit.Sts2.Core.Map\SavedActMap.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Map\SpoilsActMap.cs	path; content: MapPath, \.parents\b, \.children\b
+MegaCrit.Sts2.Core.Map\StandardActMap.cs	path; content: GenerateMap, MapPath, mapRng
+MegaCrit.Sts2.Core.Models.Acts\Glory.cs	content: mapRng, MapRng
+MegaCrit.Sts2.Core.Models.Acts\Hive.cs	content: mapRng, MapRng
+MegaCrit.Sts2.Core.Models.Acts\Overgrowth.cs	content: mapRng, MapRng
+MegaCrit.Sts2.Core.Models.Acts\Underdocks.cs	content: mapRng, MapRng
+MegaCrit.Sts2.Core.Models.Cards\Bolas.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Bombardment.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\BouncingFlask.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Brand.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\BubbleBubble.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Burn.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Comet.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Conflagration.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\CrushUnder.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\DaggerSpray.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\DeadlyPoison.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\EndOfDays.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\FanOfKnives.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\FiendFire.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\FlameBarrier.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\FlashOfSteel.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\ForgottenRitual.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\GuidingStar.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Haze.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Hellraiser.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Hyperbeam.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Infection.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Inflame.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\LanternKey.cs	content: RoomType\.Event
+MegaCrit.Sts2.Core.Models.Cards\MeteorStrike.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Neutralize.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Nightmare.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Overclock.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Pyre.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Slice.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Slimed.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\SpoilsMap.cs	path
+MegaCrit.Sts2.Core.Models.Cards\Stomp.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Suppress.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\SweepingBeam.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Cards\Whirlwind.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Characters\RandomCharacter.cs	path
+MegaCrit.Sts2.Core.Models.Encounters.Mocks\MockArtifactEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters.Mocks\MockBossEncounter.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters.Mocks\MockEliteEncounter.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters.Mocks\MockMonsterEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters.Mocks\MockNoRewardsEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters.Mocks\MockPlatingEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters.Mocks\MockTwoMonsterEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\AxebotsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\BattlewornDummyEventEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\BowlbugsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\BowlbugsWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\BygoneEffigyElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\ByrdonisElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\CeremonialBeastBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\ChompersNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ConstructMenagerieNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\CorpseSlugsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\CorpseSlugsWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\CubexConstructNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\CultistsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\DecimillipedeElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\DenseVegetationEventEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\DeprecatedEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\DevotedSculptorWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\DoormakerBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\EntomancerElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\ExoskeletonsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ExoskeletonsWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\FabricatorNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\FakeMerchantEventEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\FlyconidNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\FogmogNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\FossilStalkerNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\FrogKnightNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\FuzzyWurmCrawlerWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\GlobeHeadNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\GremlinMercNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\HauntedShipNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\HunterKillerNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\InfestedPrismsElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\InkletsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\KaiserCrabBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\KnightsElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\KnowledgeDemonBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\LagavulinMatriarchBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\LivingFogNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\LouseProgenitorNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\MawlerNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\MechaKnightElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\MysteriousKnightEventEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\MytesNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\NibbitsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\NibbitsWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\OvergrowthCrawlers.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\OvicopterNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\OwlMagistrateNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\PhantasmalGardenersElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\PhrogParasiteElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\PunchConstructNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\PunchOffEventEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\QueenBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\RubyRaidersNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ScrollsOfBitingNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ScrollsOfBitingWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SeapunkWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SewerClamNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ShrinkerBeetleWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SkulkingColonyElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\SlimedBerserkerNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SlimesNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SlimesWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SlitheringStranglerNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SludgeSpinnerWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SlumberingBeetleNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SnappingJaxfruitNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\SoulFyshBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\SoulNexusElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\SpinyToadNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\TerrorEelElite.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Encounters\TestSubjectBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\TheArchitectEventEncounter.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\TheInsatiableBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\TheKinBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\TheLostAndForgottenNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\TheObscuraNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ThievingHopperWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ToadpolesNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\ToadpolesWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\TunnelerNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\TunnelerWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\TurretOperatorWeak.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\TwoTailedRatsNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\VantomBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Encounters\VineShamblerNormal.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Encounters\WaterfallGiantBoss.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Events\DenseVegetation.cs	content: NextFloat
+MegaCrit.Sts2.Core.Models.Events\DollRoom.cs	path
+MegaCrit.Sts2.Core.Models.Events\EndlessConveyor.cs	content: NextFloat
+MegaCrit.Sts2.Core.Models.Events\FieldOfManSizedHoles.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\GraveOfTheForgotten.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\HungryForMushrooms.cs	path
+MegaCrit.Sts2.Core.Models.Events\JungleMazeAdventure.cs	content: NextFloat
+MegaCrit.Sts2.Core.Models.Events\Orobas.cs	content: NextFloat
+MegaCrit.Sts2.Core.Models.Events\PunchOff.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\Reflections.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\RoomFullOfCheese.cs	path
+MegaCrit.Sts2.Core.Models.Events\SapphireSeed.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Models.Events\SelfHelpBook.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\SlipperyBridge.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\SpiralingWhirlpool.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\Symbiote.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\TheArchitect.cs	content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Models.Events\WaterloggedScriptorium.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Events\WoodCarvings.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Modifiers\DeadlyEvents.cs	content: RoomType\.Elite, RoomType\.Treasure
+MegaCrit.Sts2.Core.Models.Modifiers\Vintage.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Monsters\CeremonialBeast.cs	content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Models.Monsters\DecimillipedeSegment.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Monsters\LagavulinMatriarch.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Monsters\MagiKnight.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Monsters\PhrogParasite.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Monsters\SlumberingBeetle.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Monsters\ThievingHopper.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Monsters\Vantom.cs	content: NextFloat
+MegaCrit.Sts2.Core.Models.Monsters\Wriggler.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Potions\ExplosiveAmpoule.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Potions\FirePotion.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Potions\FoulPotion.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Potions\PoisonPotion.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Potions\PotionOfBinding.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Powers\CorrosiveWavePower.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Powers\DoomPower.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Powers\InfernoPower.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Powers\NoxiousFumesPower.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Powers\ReattachPower.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Powers\RollingBoulderPower.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Powers\TheBombPower.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Relics\AmethystAubergine.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Relics\BeautifulBracelet.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Relics\BigMushroom.cs	path
+MegaCrit.Sts2.Core.Models.Relics\BlackStar.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Relics\BoomingConch.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Relics\DreamCatcher.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Relics\EternalFeather.cs	content: RestSiteRoom
+MegaCrit.Sts2.Core.Models.Relics\FakeVenerableTeaSet.cs	content: RestSiteRoom
+MegaCrit.Sts2.Core.Models.Relics\FragrantMushroom.cs	path
+MegaCrit.Sts2.Core.Models.Relics\GhostSeed.cs	path
+MegaCrit.Sts2.Core.Models.Relics\GoldenCompass.cs	content: GenerateMap, RoomType\.Event
+MegaCrit.Sts2.Core.Models.Relics\JuzuBracelet.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Relics\LavaRock.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Relics\NutritiousSoup.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Relics\PaelsClaw.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Relics\Pantograph.cs	content: RoomType\.Boss, \.parents\b
+MegaCrit.Sts2.Core.Models.Relics\PrayerWheel.cs	content: RoomType\.Monster
+MegaCrit.Sts2.Core.Models.Relics\RegalPillow.cs	content: RestSiteRoom
+MegaCrit.Sts2.Core.Models.Relics\RoyalStamp.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Relics\SlingOfCourage.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Relics\StoneCracker.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Relics\SwordOfStone.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Relics\TriBoomerang.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Relics\TwistedFunnel.cs	content: AddChild
+MegaCrit.Sts2.Core.Models.Relics\VenerableTeaSet.cs	content: RestSiteRoom
+MegaCrit.Sts2.Core.Models.Relics\WarHammer.cs	content: RoomType\.Elite
+MegaCrit.Sts2.Core.Models.Relics\WhiteStar.cs	content: RoomType\.Elite, RoomType\.Boss
+MegaCrit.Sts2.Core.Models.Singleton\MultiplayerScalingModel.cs	content: RoomType\.Boss
+MegaCrit.Sts2.Core.Models\ActModel.cs	content: MapNode, mapRng, MapRng
+MegaCrit.Sts2.Core.Models\AncientEventModel.cs	content: MapNode, RoomType\.Event
+MegaCrit.Sts2.Core.Models\CardModel.cs	content: AddChild
+MegaCrit.Sts2.Core.Models\EncounterModel.cs	content: MapNode, RoomType\.Elite, RoomType\.Monster
+MegaCrit.Sts2.Core.Models\PotionModel.cs	content: AddChild
+MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine\RandomBranchState.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Multiplayer.Game.Lobby\StartRunLobby.cs	content: SeedHelper
+MegaCrit.Sts2.Core.Multiplayer.Game.PeerInput\MapDrawingEventType.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Game.PeerInput\NetMapDrawingEvent.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Game\FlavorSynchronizer.cs	content: AddChild
+MegaCrit.Sts2.Core.Multiplayer.Game\MapSelectionSynchronizer.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Game\MapVote.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Game\TreasureRoomRelicSynchronizer.cs	path; content: RoomType\.Treasure
+MegaCrit.Sts2.Core.Multiplayer.Messages.Game.Flavor\ClearMapDrawingsMessage.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Messages.Game.Flavor\MapDrawingMessage.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Messages.Game.Flavor\MapDrawingModeChangedMessage.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Messages.Game.Flavor\MapPingMessage.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Messages.Game\SyncRngMessage.cs	path
+MegaCrit.Sts2.Core.Multiplayer.Messages.Lobby\LobbySeedChangedMessage.cs	path
+MegaCrit.Sts2.Core.Nodes.Animation\NDecimillipedeSegmentDriver.cs	path
+MegaCrit.Sts2.Core.Nodes.Animation\NSpineAutoPlayer.cs	path
+MegaCrit.Sts2.Core.Nodes.Audio\NAudioManager.cs	path
+MegaCrit.Sts2.Core.Nodes.Audio\NRunMusicController.cs	path; content: RoomType\.Rest, RoomType\.Elite, RoomType\.Monster
+MegaCrit.Sts2.Core.Nodes.Cards.Holders\NCardHolder.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Cards.Holders\NCardHolderHitbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Cards.Holders\NGridCardHolder.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Cards.Holders\NHandCardHolder.cs	path
+MegaCrit.Sts2.Core.Nodes.Cards.Holders\NPreviewCardHolder.cs	path
+MegaCrit.Sts2.Core.Nodes.Cards.Holders\NSelectedHandCardHolder.cs	path
+MegaCrit.Sts2.Core.Nodes.Cards\NCard.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Cards\NCardBundle.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Cards\NCardGrid.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Cards\NCardHighlight.cs	path
+MegaCrit.Sts2.Core.Nodes.Cards\NEnchantPreview.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Cards\NTinyCard.cs	path
+MegaCrit.Sts2.Core.Nodes.Cards\NTransformPreview.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Cards\NUpgradePreview.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NCardPlay.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NCardPlayQueue.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NCombatCardPile.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NCombatPilesContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NCombatSceneContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NCombatStartBanner.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NCombatUi.cs	path; content: RoomType\.Boss, AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NControllerCardPlay.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NCreature.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Combat\NCreatureStateDisplay.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Combat\NCreatureVisuals.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NDiscardPileButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NDrawPileButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NEndTurnButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NEndTurnLongPressBar.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NEnemyTurnBanner.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NEnergyCounter.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NExhaustPileButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NHealthBar.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NIntent.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NMouseCardPlay.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NPeekButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NPingButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NPlayerHand.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NPlayerTurnBanner.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NPower.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NPowerContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NRemoteTargetingIndicator.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NSelectedHandCardContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NSelectionReticle.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NStarCounter.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\NTargetManager.cs	path
+MegaCrit.Sts2.Core.Nodes.Combat\NTargetingArrow.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Combat\TargetMode.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\CardPreviewStyle.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NAbandonRunConfirmPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NBackButton.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NCardPreviewContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NCardViewSortButton.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NCommonBanner.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NConfirmButton.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NControllerManager.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NCursorManager.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NDisconnectConfirmPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NDropdownContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NDropdownItem.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NDropdownScrollbar.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NErrorPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NGlobalUi.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.CommonUi\NGoldArrowButton.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NGridCardPreviewContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NHotkeyManager.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NInputManager.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NLoadingOverlay.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NMessyCardPreviewContainer.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.CommonUi\NMiscConfirmButton.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NModalContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.CommonUi\NMultiplayerVoteContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.CommonUi\NPopupYesNoButton.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NProceedButton.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NSaveIndicator.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NScrollbarTrain.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NSearchBar.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NSettingsScreenPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.CommonUi\NTopBar.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.CommonUi\NVerticalPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug.Multiplayer\NMultiplayerTest.cs	path; content: GenerateMap, RoomType\.Rest, RoomType\.Shop
+MegaCrit.Sts2.Core.Nodes.Debug.Multiplayer\NMultiplayerTestCharacterPaginator.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\BootstrapSettingsUtil.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\IBootstrapSettings.cs	path; content: RoomType\.Rest, RoomType\.Elite, RoomType\.Monster
+MegaCrit.Sts2.Core.Nodes.Debug\IBootstrapSettingsSubtypes.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\NCommandHistory.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\NDebugAspectRatio.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\NDebugInfoLabelManager.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Debug\NDevConsole.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Debug\NFpsVisualizer.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\NMemoryMonitor.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\NParticleCounter.cs	path
+MegaCrit.Sts2.Core.Nodes.Debug\NSceneBootstrapper.cs	path; content: SeedHelper, RoomType\.Rest, RoomType\.Shop
+MegaCrit.Sts2.Core.Nodes.Events.Custom.CrystalSphere\NCrystalSphereCell.cs	path
+MegaCrit.Sts2.Core.Nodes.Events.Custom.CrystalSphere\NCrystalSphereDialogue.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Events.Custom.CrystalSphere\NCrystalSphereItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Events.Custom.CrystalSphere\NCrystalSphereMask.cs	path
+MegaCrit.Sts2.Core.Nodes.Events.Custom.CrystalSphere\NCrystalSphereScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Events.Custom\NFakeMerchant.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Events\EventSplitVoteAnimation.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Events\ICustomEventNode.cs	path
+MegaCrit.Sts2.Core.Nodes.Events\NAncientDialogueHitbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Events\NAncientDialogueLine.cs	path
+MegaCrit.Sts2.Core.Nodes.Events\NAncientEventLayout.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Events\NCombatEventLayout.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Events\NDivinationButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Events\NEventLayout.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Events\NEventOptionButton.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Ftue\NAcceptTutorialsFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NCanPlayCardsFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NCannotPlayCardFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NCombatRewardFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NCombatRulesFtue.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Ftue\NFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NFtueConfirmButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NMapSelectFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NMerchantFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NObtainPotionFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NPowerCardFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NRelicRewardFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NRestSiteFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.Ftue\NShuffleFtue.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NButton.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NClickableControl.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NDropdown.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NMegaLineEdit.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NMegaTextEdit.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NScrollableContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NScrollbar.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NSlider.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\NodeUtil.cs	path
+MegaCrit.Sts2.Core.Nodes.GodotExtensions\TweenHelper.cs	path
+MegaCrit.Sts2.Core.Nodes.HoverTips\NHoverTipCardContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.HoverTips\NHoverTipSet.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.HoverTips\NMapPointHistoryHoverTip.cs	path; content: RoomType\.Rest, RoomType\.Elite, RoomType\.Monster
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NGenericPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NInvitePlayersButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerCardIntent.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerNetworkProblemIndicator.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerPlayerExpandedState.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerPlayerIntentHandler.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerPlayerState.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerPlayerStateContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerTimeoutOverlay.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NMultiplayerWarningPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NRemoteLoadLobbyPlayerContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NRemoteLobbyPlayer.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NRemoteLobbyPlayerContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NRemoteMouseCursor.cs	path
+MegaCrit.Sts2.Core.Nodes.Multiplayer\NRemoteMouseCursorContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Orbs\NOrb.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Orbs\NOrbManager.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Pooling\INodePool.cs	path
+MegaCrit.Sts2.Core.Nodes.Pooling\IPoolable.cs	path
+MegaCrit.Sts2.Core.Nodes.Pooling\NodePool.cs	path
+MegaCrit.Sts2.Core.Nodes.Potions\NPotion.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Potions\NPotionContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Potions\NPotionHolder.cs	path; content: RoomType\.Shop, AddChild
+MegaCrit.Sts2.Core.Nodes.Potions\NPotionPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.Potions\NPotionPopupButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Potions\NPotionShortcutButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Reaction\NReaction.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Reaction\NReactionContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Reaction\NReactionWheel.cs	path
+MegaCrit.Sts2.Core.Nodes.Reaction\NReactionWheelWedge.cs	path
+MegaCrit.Sts2.Core.Nodes.Relics\NRelic.cs	path
+MegaCrit.Sts2.Core.Nodes.Relics\NRelicBasicHolder.cs	path
+MegaCrit.Sts2.Core.Nodes.Relics\NRelicInventory.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Relics\NRelicInventoryHolder.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.RestSite\NParticleSystemUpscaler.cs	path
+MegaCrit.Sts2.Core.Nodes.RestSite\NRestSiteButton.cs	path; content: RestSiteRoom
+MegaCrit.Sts2.Core.Nodes.RestSite\NRestSiteCharacter.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Rewards\NLinkedRewardSet.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Rewards\NRewardButton.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Rooms\IRoomWithProceedButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Rooms\NCombatBackground.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Rooms\NCombatRoom.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Rooms\NEventRoom.cs	path
+MegaCrit.Sts2.Core.Nodes.Rooms\NMapRoom.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Rooms\NMerchantButton.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Rooms\NMerchantRoom.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Rooms\NRestSiteRoom.cs	path; content: RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Nodes.Rooms\NTreasureRoom.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Bestiary\NBestiary.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Bestiary\NBestiaryEntry.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Bestiary\NBestiaryMoveButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Capstones\ICapstoneScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Capstones\NCapstoneContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NCardCostTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NCardLibrary.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NCardLibraryGrid.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NCardLibraryStats.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NCardPoolFilter.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NCardRarityTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NCardTypeTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NClearSearchButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\NLibraryStatTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary\SortingOrders.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\ICardSelector.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NCardGridSelectionScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NCardRewardAlternativeButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NCardRewardSelectionScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NChoiceSelectionSkipButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NChooseABundleSelectionScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NChooseACardSelectionScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NDeckCardSelectScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NDeckEnchantSelectScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NDeckTransformSelectScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NDeckUpgradeSelectScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CardSelection\NSimpleCardSelectScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\ICharacterSelectButtonDelegate.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\NActDropdown.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\NAscensionPanel.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\NCharacterSelectButton.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\NCharacterSelectScreen.cs	path; content: RoomType\.Rest, RoomType\.Shop, RoomType\.Treasure
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\NCharacterSelectScreenBg.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\NMultiplayerLoadGameScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect\NRegentCharacterSelectBg.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Credits\NCreditsScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CustomRun\NCustomRunLoadScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.CustomRun\NCustomRunScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.CustomRun\NRunModifierTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunCharacterContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunLeaderboard.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunLeaderboardRow.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunLeaderboardSeparator.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunLoadScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunScoreWarning.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunScreen.cs	path; content: SeedHelper
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NDailyRunScreenModifier.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NLeaderboardDayPaginator.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.DailyRun\NLeaderboardPageArrow.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\FeedbackData.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NFeedbackCategoryDropdown.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NFeedbackCategoryDropdownItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NFeedbackScreenOpener.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NSendFeedbackButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NSendFeedbackCartoon.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NSendFeedbackEmojiButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NSendFeedbackFlower.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.FeedbackScreen\NSendFeedbackScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.GameOverScreen\NBadge.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.GameOverScreen\NDiscoveredItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.GameOverScreen\NGameOverContinueButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.GameOverScreen\NGameOverScreen.cs	path; content: RoomType\.Elite, RestSiteRoom, AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.GameOverScreen\NReturnToMainMenuButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.GameOverScreen\NRunSummary.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.GameOverScreen\NViewRunButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.InspectScreens\NInspectRelicScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.InspectScreens\NUpgradePreviewTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NCompendiumBottomButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NCompendiumSubmenu.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NContinueRunInfo.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NCustomRunModifiersList.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NDisclaimerProceedButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NEarlyAccessDisclaimer.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NJoinFriendButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NJoinFriendRefreshButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NJoinFriendScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NJoinFriendScreenButtonLayout.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NLogoAnimation.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NMainMenu.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NMainMenuBg.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NMainMenuContinueButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NMainMenuSubmenuStack.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NMainMenuTextButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NMultiplayerHostSubmenu.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NMultiplayerSubmenu.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NOpenProfileScreenButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NPatchNotesButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NPatchNotesScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NPrideRainbow.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NShortSubmenuButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NSingleplayerSubmenu.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NSubmenu.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NSubmenuButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.MainMenu\NSubmenuStack.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\DrawingMode.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\MapSplitVoteAnimation.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NAncientMapPoint.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NBaseMapDrawingButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NBossMapPoint.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NControllerMapDrawingInput.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapBg.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapClearButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapDrawButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapDrawingInput.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapDrawings.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapEraseButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapLegendItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapMarker.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapPoint.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMapScreen.cs	path; content: MapNode, \.children\b, AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMouseHeldMapDrawingInput.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NMouseModeMapDrawingInput.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Map\NNormalMapPoint.cs	path; content: RoomType\.Elite, RoomType\.Monster, RoomType\.Shop
+MegaCrit.Sts2.Core.Nodes.Screens.ModdingScreen\NConfirmModLoadingPopup.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ModdingScreen\NModInfoContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ModdingScreen\NModMenuButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ModdingScreen\NModMenuRow.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ModdingScreen\NModdingScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Overlays\IOverlayScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Overlays\NOverlayStack.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.PauseMenu\NPauseMenu.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.PauseMenu\NPauseMenuButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.PotionLab\NLabPotionHolder.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.PotionLab\NPotionLab.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.PotionLab\NPotionLabCategory.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.ProfileScreen\NDeleteProfileButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ProfileScreen\NProfileButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ProfileScreen\NProfileIcon.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ProfileScreen\NProfileScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.RelicCollection\NRelicCollection.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.RelicCollection\NRelicCollectionCategory.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.RelicCollection\NRelicCollectionEntry.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\GameOverType.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NActHistoryEntry.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NDeckHistory.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NDeckHistoryEntry.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NMapPointHistory.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NMapPointHistoryEntry.cs	path; content: RoomType\.Rest, RoomType\.Elite, RoomType\.Monster
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NRelicHistory.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NRunHistory.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NRunHistoryArrowButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.RunHistoryScreen\NRunHistoryPlayerIcon.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.ScreenContext\ActiveScreenContext.cs	path; content: RestSiteRoom
+MegaCrit.Sts2.Core.Nodes.Screens.ScreenContext\IScreenContext.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.ScreenContext\ScreenContextUtils.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\IResettableSettingNode.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NAbandonRunButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NAmbienceSlider.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NAspectRatioDropdown.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NAspectRatioDropdownItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NBackgroundModeHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NBackgroundModeTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NBgmVolumeSlider.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NCommonTooltipsHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NCommonTooltipsTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NCreditsButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NDisplayDropdown.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NDisplayDropdownItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NDropdownPositioner.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NFastModeHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NFastModeTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NFpsPaginator.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NFullscreenHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NFullscreenTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NHandCardCountHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NHandCardCountTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NInputSettingsEntry.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NInputSettingsPanel.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NIntroLogoHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NIntroLogoTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NLanguageButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NLanguageDropdown.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NLanguageDropdownItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NLongPressConfirmationHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NLongPressConfirmationTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NMasterVolumeSlider.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NMsaaHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NMsaaPaginator.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NMuteInBackgroundTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NOpenFeedbackScreenButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NOpenModdingScreenButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NPaginateArrow.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NPaginator.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NResetGameplayButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NResetGraphicsButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NResetToDefaultControlsButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NResetTutorialsButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NResolutionDropdown.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NResolutionDropdownItem.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NRunTimerHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NRunTimerTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NScreenshakeHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NScreenshakePaginator.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsDropdown.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsGradientMask.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsPanel.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsSlider.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsTab.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsTabManager.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSettingsToast.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NSfxVolumeSlider.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NTextEffectsHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NTextEffectsTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NUploadDataTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NUploadGameplayDataHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NVSyncPaginator.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NWindowResizeHoverTip.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Settings\NWindowResizeTickbox.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NFakeMerchantInventory.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantCard.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantCardRemoval.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantCharacter.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantDialogue.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantHand.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantInventory.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantPotion.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantRelic.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Shops\NMerchantSlot.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NAchievementHolder.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NAchievementsGrid.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NCharacterStats.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NGeneralStatsGrid.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NShareStatsButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NStatEntry.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NStatsScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.StatsScreen\NStatsTabManager.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockCardsScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockCharacterScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockEpochScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockMiscScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockPotionsScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockRelicsScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline.UnlockScreens\NUnlockTimelineScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\EpochComparer.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\EpochSlotState.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NAcknowledgeButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NChapterPaginateButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NCloseButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NEpochCard.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NEpochInspectScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NEpochPaginateButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NEpochReminderText.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NEpochSlot.cs	path; content: AddChild, NextDouble
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NEraColumn.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NResetProgressButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NSlotsContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NTimelineLineMask.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NTimelineScreen.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NTimelineTutorial.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NUnlockConfirmButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.Timeline\NUnlockInfo.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens.TreasureRoomRelic\NHandImage.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.TreasureRoomRelic\NHandImageCollection.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens.TreasureRoomRelic\NTreasureRoomRelicCollection.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Screens.TreasureRoomRelic\NTreasureRoomRelicHolder.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\CapstoneSubmenuType.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NAncientBgContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NCapstoneSubmenuStack.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NCardPileScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NCardsViewScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NChooseARelicSelection.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens\NDeckViewScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NInspectCardScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NRewardsScreen.cs	path; content: RoomType\.Boss, AddChild
+MegaCrit.Sts2.Core.Nodes.Screens\NRunSubmenuStack.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Screens\NShareButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Screens\NSimpleCardsViewScreen.cs	path
+MegaCrit.Sts2.Core.Nodes.TreasureRooms\NTreasureButton.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Backgrounds\NCeremonialBeastBgVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Backgrounds\NKaiserCrabBossBackground.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Backgrounds\NQueenRepyBgVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NBolasVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NCardRareGlow.cs	path; content: NextDouble
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NCardUncommonGlow.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NExhaustVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NFanOfKnivesVfx.cs	path; content: NextFloat, NextDouble
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NHellraiserAttackVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NHellraiserSwordVfx.cs	path; content: NextFloat, NextDouble
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NHellraiserVfx.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NNightmareHandsVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NSpikeSplashVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx.Cards\NSpookyHandVfx.cs	path; content: NextFloat, NextDouble
+MegaCrit.Sts2.Core.Nodes.Vfx.Events\NSymbioteEyeMovementVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Examples\NGlowExampleVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Examples\NNoiseScroller.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Examples\NSaturationExampleVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Ui\NGaseousScreenVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Ui\NLowHpBorderVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\DialogueSide.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\DialogueStyle.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\LocalizedTexture.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\NHitStop.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\NParticlesContainer.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\NScreenShake.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\NSpriteAnimator.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\NTrail2D.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\NVfxParticleSystem.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\NVfxSpine.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\RumbleStyle.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\ScreenPunchInstance.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\ScreenRumbleInstance.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\ScreenTraumaRumble.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\ShakeDuration.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\ShakeInstance.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx.Utilities\ShakeStrength.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\IDeathDelayer.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NAdditiveOverlayVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NAmalgamVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NArchitectVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NAxebotVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBasicTrail.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBattlewornDummyVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBezierTrail.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBgGroundSpikeVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NBigSlashImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBigSlashVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBlockBrokenVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBlockSparkVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NBounceSparkVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardEnchantVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardFlyPowerVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardFlyShuffleVfx.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardFlyVfx.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardSmithVfx.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardTrail.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardTrailVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardTransformVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\NCardUpgradeVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\NCeremonialBeastVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NCubexConstructVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NDaggerSprayFlurryVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NDaggerSprayImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NDamageBlockedVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NDamageNumVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NDecimillipedeRocksVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NDecimillipedeSegmentVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NDesaturateTransitionVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NDevotedSculptorVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NDoomOverlayVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NDoomSubEmitterVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NDoomVfx.cs	path; content: AddChild, NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NEntomancerVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NEpochHighlightVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NEpochOffscreenVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NEpochSlotParticle.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NFakeMerchantVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFgGroundSpikeVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NFireBurningVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFireBurstVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFireSmokePuffVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFlyconidSporesVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFollowCursor.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFossilStalkerVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFullscreenTextVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NFuzzyWurmCrawlerSpitTrailVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NGainEpochVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NGasBombVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NGaseousImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NGoopyImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NGroundFireVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NHauntedShipVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NHealNumVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NHeavyBluntVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NHitSparkVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NHorizontalLinesVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NHunterKillerVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NHyperbeamImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NHyperbeamVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NItemThrowVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NKaiserCrabBossExplosionVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NKaiserCrabBossVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NKinFollowerVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NKinPriestBeamVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NKinPriestGrenadeVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NKinPriestVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NKnowledgeDemonVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NLargeMagicMissileVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NLaserVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NLineBurstVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NLiquidOverlayVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NLivingGasVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NLostAndForgottenVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NMapCircleVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NMapNodeSelectVfx.cs	path; content: MapNode, mapNodes, MapNodes
+MegaCrit.Sts2.Core.Nodes.Vfx\NMapPingVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NMechaKnightVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NMinionDiveBombVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NMirrorVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NMonsterDeathVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NMyteVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NNecrobinderFlameVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NOilSpillVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NParafrightVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NPhantasmalGardenerVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NPhrogParasiteVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NPoisonImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NPotionFlashVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\NPowerAppliedVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NPowerFlashVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NPowerRemovedVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NPowerUpVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\NQueenVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NRadialBlurVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NRainVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NRegentVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NRelicFlashVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NRestSiteFireVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NRestSmokeVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NRollingBoulderVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NScratchVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NScreamVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSeapunkVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSewerClamVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NShivThrowVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSleepingVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSlimedBerserkerVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSmallMagicMissileVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSmokePuffVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSmokyVignetteVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSnappingJaxfruitVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSoulFyshVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSovereignBladeVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSpectralKnightVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSpeechBubbleVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSpinyToadVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSplashVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSpookyScreamVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSporeImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NStabVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NStarryImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NStunnedVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSweepingBeamImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NSweepingBeamVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\NTestSubjectVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NTheInsatiableVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NTheObscuraVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NThinSliceVfx.cs	path; content: NextFloat
+MegaCrit.Sts2.Core.Nodes.Vfx\NThoughtBubbleVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NUiFlashVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NVantomVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NVineShamblerVinesVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NWaterfallGiantVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\NWormyImpactVfx.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\PlayerFullscreenHealVfx.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\PlayerHurtVignetteHelper.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes.Vfx\VfxColor.cs	path
+MegaCrit.Sts2.Core.Nodes.Vfx\VfxPosition.cs	path
+MegaCrit.Sts2.Core.Nodes\NActBanner.cs	path
+MegaCrit.Sts2.Core.Nodes\NAncientNameBanner.cs	path
+MegaCrit.Sts2.Core.Nodes\NAssetLoader.cs	path
+MegaCrit.Sts2.Core.Nodes\NBackgroundModeHandler.cs	path
+MegaCrit.Sts2.Core.Nodes\NGame.cs	path; content: GenerateMap, SeedHelper, AddChild
+MegaCrit.Sts2.Core.Nodes\NMuteInBackgroundHandler.cs	path
+MegaCrit.Sts2.Core.Nodes\NOneTimeInitialization.cs	path
+MegaCrit.Sts2.Core.Nodes\NRun.cs	path; content: RestSiteRoom
+MegaCrit.Sts2.Core.Nodes\NSceneContainer.cs	path; content: AddChild
+MegaCrit.Sts2.Core.Nodes\NTransition.cs	path
+MegaCrit.Sts2.Core.Odds\AbstractOdds.cs	content: class.*Rng\b
+MegaCrit.Sts2.Core.Odds\CardRarityOdds.cs	content: NextFloat
+MegaCrit.Sts2.Core.Odds\PotionRewardOdds.cs	content: RoomType\.Elite, NextFloat
+MegaCrit.Sts2.Core.Odds\UnknownMapPointOdds.cs	path; content: RoomType\.Elite, RoomType\.Monster, RoomType\.Shop
+MegaCrit.Sts2.Core.Random\PlayerRngSet.cs	path
+MegaCrit.Sts2.Core.Random\Rng.cs	path; content: class.*Rng\b, NextFloat, NextDouble
+MegaCrit.Sts2.Core.Rewards\CardReward.cs	content: AddChild
+MegaCrit.Sts2.Core.Rewards\RewardsSet.cs	content: RoomType\.Elite, RoomType\.Monster, RoomType\.Boss
+MegaCrit.Sts2.Core.Rooms\AbstractRoom.cs	path; content: RoomType\.Elite, RoomType\.Monster, RoomType\.Event
+MegaCrit.Sts2.Core.Rooms\BackgroundAssets.cs	path
+MegaCrit.Sts2.Core.Rooms\CombatEventVisuals.cs	path
+MegaCrit.Sts2.Core.Rooms\CombatRoom.cs	path
+MegaCrit.Sts2.Core.Rooms\CombatRoomMode.cs	path
+MegaCrit.Sts2.Core.Rooms\EventRoom.cs	path; content: RoomType\.Event
+MegaCrit.Sts2.Core.Rooms\ICombatRoomVisuals.cs	path
+MegaCrit.Sts2.Core.Rooms\MapRoom.cs	path
+MegaCrit.Sts2.Core.Rooms\MerchantRoom.cs	path; content: RoomType\.Shop
+MegaCrit.Sts2.Core.Rooms\RestSiteRoom.cs	path; content: RoomType\.Rest, RestSiteRoom
+MegaCrit.Sts2.Core.Rooms\RoomSet.cs	path; content: RoomType\.Elite, RoomType\.Monster, RoomType\.Shop
+MegaCrit.Sts2.Core.Rooms\RoomType.cs	path
+MegaCrit.Sts2.Core.Rooms\RoomTypeExtensions.cs	path
+MegaCrit.Sts2.Core.Rooms\TreasureRoom.cs	path; content: RoomType\.Treasure
+MegaCrit.Sts2.Core.Runs.History\MapPointHistoryEntry.cs	path
+MegaCrit.Sts2.Core.Runs.History\MapPointRoomHistoryEntry.cs	path
+MegaCrit.Sts2.Core.Runs.Metrics\MetricUtilities.cs	content: RoomType\.Event
+MegaCrit.Sts2.Core.Runs\CardCreationOptions.cs	content: RoomType\.Elite, RoomType\.Monster, RoomType\.Shop
+MegaCrit.Sts2.Core.Runs\PlayerMapPointHistoryEntry.cs	path
+MegaCrit.Sts2.Core.Runs\RunHistoryUtilities.cs	content: RoomType\.Event
+MegaCrit.Sts2.Core.Runs\RunManager.cs	content: GenerateMap, RoomType\.Rest, RoomType\.Elite
+MegaCrit.Sts2.Core.Runs\RunRngSet.cs	path
+MegaCrit.Sts2.Core.Runs\RunState.cs	content: SeedHelper
+MegaCrit.Sts2.Core.Saves.Managers\ProgressSaveManager.cs	content: RoomType\.Elite, RoomType\.Event, RoomType\.Boss
+MegaCrit.Sts2.Core.Saves.MapDrawing\SerializableMapDrawingLine.cs	path
+MegaCrit.Sts2.Core.Saves.MapDrawing\SerializableMapDrawings.cs	path
+MegaCrit.Sts2.Core.Saves.MapDrawing\SerializableMapDrawingsJsonConverter.cs	path
+MegaCrit.Sts2.Core.Saves.MapDrawing\SerializablePlayerMapDrawings.cs	path
+MegaCrit.Sts2.Core.Saves.Migrations\InvalidMigrationPathException.cs	path
+MegaCrit.Sts2.Core.Saves.Migrations\MigrationPathGapException.cs	path
+MegaCrit.Sts2.Core.Saves.Runs\SerializableActMap.cs	path
+MegaCrit.Sts2.Core.Saves.Runs\SerializableMapPoint.cs	path; content: \.children\b
+MegaCrit.Sts2.Core.Saves.Runs\SerializableRoom.cs	path
+MegaCrit.Sts2.Core.Saves.Runs\SerializableRoomSet.cs	path
+MegaCrit.Sts2.Core.Saves.Runs\SerializableRunRngSet.cs	path
+MegaCrit.Sts2.Core.Saves\SerializablePlayerRngSet.cs	path
+MegaCrit.Sts2.Core.Saves\UserDataPathProvider.cs	path
+MegaCrit.Sts2.Core.TestSupport\TestRngInjector.cs	path
+MegaCrit.Sts2.Core.Timeline.Epochs\CustomAndSeedsEpoch.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NRunTimer.cs	path; content: AddChild
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarBossIcon.cs	path; content: RoomType\.Boss, AddChild
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarButton.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarDeckButton.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarFloorIcon.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarGold.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarHp.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarMapButton.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarModifier.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarPauseButton.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarPortrait.cs	path; content: AddChild
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarPortraitTip.cs	path
+MegaCrit.sts2.Core.Nodes.TopBar\NTopBarRoomIcon.cs	path; content: RoomType\.Monster, RoomType\.Shop, RoomType\.Treasure
+Properties\AssemblyInfo.cs	content: MapNode, RestSiteRoom, mapNodes
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__CamelCaseRegex_0.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__ConsecutiveSpaces_6.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__HtmlTags_7.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__NonSpaceWhitespaceCharacters_5.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__SnakeCaseRegex_1.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__SpecialCharRegex_3.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__SteamIdRegex_4.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__Utilities.cs	path
+System.Text.RegularExpressions.Generated\-RegexGenerator_g-FACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__WhitespaceRegex_2.cs	path
