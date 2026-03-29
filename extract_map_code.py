@@ -41,6 +41,8 @@ CONTENT_PATTERNS = [
     r"mapSeed",
     r"MapSeed",
     r"SeedHelper",
+    r"StringHelper",
+    r"GetDeterministicHashCode",
     r"SeedManager",
     r"SeedConverter",
     r"StringToSeed",
