@@ -34,19 +34,13 @@ def _uint32(x: int) -> int:
 def get_deterministic_hash_code(s: str) -> int:
     """
     StringHelper.GetDeterministicHashCode - deterministic string hash.
-    Mirrors the .NET Framework string.GetHashCode() algorithm (djb2 variant).
+    Single-pass djb2 variant starting from h=5381 (matches verified STS2 output).
     Returns a 32-bit signed int.
     """
-    hash1 = _int32((5381 << 16) + 5381)   # 352784485
-    hash2 = hash1
-    i = 0
-    while i < len(s):
-        hash1 = _int32(_int32((hash1 << 5) + hash1) ^ ord(s[i]))
-        if i == len(s) - 1:
-            break
-        hash2 = _int32(_int32((hash2 << 5) + hash2) ^ ord(s[i + 1]))
-        i += 2
-    return _int32(hash1 + _int32(hash2 * 1566083941))
+    h = 5381
+    for c in s:
+        h = _int32(_int32((h << 5) + h) ^ ord(c))
+    return h
 
 
 # ---------------------------------------------------------------------------
@@ -91,9 +85,11 @@ class DotNetRandom:
                 n = i + 30
                 if n >= 55:
                     n -= 55
-                self._seed_array[i] -= self._seed_array[1 + n]
-                if self._seed_array[i] < 0:
-                    self._seed_array[i] += _MBIG
+                # Simulate C# unchecked int32 subtraction (wraps on overflow)
+                val = _int32(self._seed_array[i] - self._seed_array[1 + n])
+                if val < 0:
+                    val += _MBIG
+                self._seed_array[i] = val
 
     def _internal_sample(self) -> int:
         loc_inext = self._inext + 1
