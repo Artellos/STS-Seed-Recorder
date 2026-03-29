@@ -16,7 +16,7 @@
       <span id="header-seed-name" class="seed-name-display"></span>
     </div>
     <div class="map-header-actions">
-      <button id="btn-generate" class="btn btn-generate" title="Auto-generate map from seed using sts2-cli">
+      <button id="btn-generate" class="btn btn-generate" title="Auto-generate map from seed">
         ⚡ Generate from Seed
       </button>
       <button id="btn-connect-mode" class="btn btn-secondary" title="Toggle connection drawing mode (C)">
@@ -140,37 +140,15 @@
     <div class="modal">
       <h2>⚡ Generate from Seed</h2>
 
-      <!-- Config form (shown when sts2-cli is available) -->
-      <div id="gen-config" style="display:none">
-        <label>
-          Character
-          <select id="gen-character">
-            <option value="Ironclad">Ironclad</option>
-            <option value="Silent">Silent</option>
-            <option value="Defect">Defect</option>
-            <option value="Regent">Regent</option>
-            <option value="Necrobinder">Necrobinder</option>
-          </select>
-        </label>
-        <label>
-          Ascension Level
-          <input id="gen-ascension" type="number" min="0" max="20" value="0" />
-        </label>
+      <!-- Config form -->
+      <div id="gen-config">
+        <p style="margin:0 0 14px; font-size:13px; color:var(--text-muted)">
+          Maps are generated instantly from the seed using a pure Python port of the STS2 algorithm. No game installation required.
+        </p>
         <label style="flex-direction:row; align-items:center; gap:10px">
           <input id="gen-overwrite" type="checkbox" checked style="width:auto" />
           Clear existing nodes before importing
         </label>
-      </div>
-
-      <!-- Unavailable notice (shown when sts2-cli is not configured) -->
-      <div id="gen-unavailable" style="display:none">
-        <div class="gen-error" id="gen-unavailable-msg"></div>
-        <p style="margin-top:12px; font-size:13px; color:var(--text-muted)">
-          To enable auto-generation, install
-          <a href="https://github.com/wuhao21/sts2-cli" target="_blank">wuhao21/sts2-cli</a>,
-          run <code>./setup.sh</code>, then set the
-          <code>STS2_CLI_DIR</code> environment variable before starting the server.
-        </p>
       </div>
 
       <!-- Progress (shown while running) -->
