@@ -57,6 +57,21 @@ const API = {
       apiFetch(`/api/nodes/${id}`, { method: "DELETE" }),
   },
 
+  // ── sts2-cli ─────────────────────────────────────────────────────────────
+
+  sts2: {
+    status: () => apiFetch("/api/sts2/status"),
+
+    generate: (seed_id, character, ascension, overwrite) =>
+      apiFetch(`/api/seeds/${seed_id}/generate`, {
+        method: "POST",
+        body: JSON.stringify({ character, ascension, overwrite }),
+      }),
+
+    generateStatus: (seed_id) =>
+      apiFetch(`/api/seeds/${seed_id}/generate/status`),
+  },
+
   // ── Connections ──────────────────────────────────────────────────────────
 
   connections: {

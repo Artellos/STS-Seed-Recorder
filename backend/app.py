@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, send_from_directory
 from database import init_db, get_connection
 import os
+import threading
 
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "frontend")
 
@@ -181,6 +182,156 @@ def delete_connection(conn_id):
     with get_connection() as conn:
         conn.execute("DELETE FROM connections WHERE id = ?", (conn_id,))
     return "", 204
+
+
+# ── sts2-cli integration ──────────────────────────────────────────────────────
+
+# In-progress generation jobs: seed_id → {"status", "progress", "error"}
+_gen_jobs: dict = {}
+_gen_lock = threading.Lock()
+
+
+@app.route("/api/sts2/status", methods=["GET"])
+def sts2_status():
+    from sts2_client import sts2_available
+    ok, msg = sts2_available()
+    return jsonify({"available": ok, "message": msg})
+
+
+@app.route("/api/seeds/<int:seed_id>/generate", methods=["POST"])
+def generate_map(seed_id):
+    """
+    Start a background job that runs sts2-cli to auto-populate all 3 act maps
+    for the given seed.  Clears existing nodes/connections for this seed first.
+
+    Body (JSON, all optional):
+        character  string  default "Ironclad"
+        ascension  int     default 0
+        overwrite  bool    default true  — clear existing nodes before importing
+    """
+    from sts2_client import sts2_available, get_all_maps
+
+    ok, msg = sts2_available()
+    if not ok:
+        return jsonify({"error": f"sts2-cli not available: {msg}"}), 503
+
+    with get_connection() as conn:
+        seed_row = conn.execute(
+            "SELECT * FROM seeds WHERE id = ?", (seed_id,)
+        ).fetchone()
+    if not seed_row:
+        return jsonify({"error": "Seed not found"}), 404
+
+    with _gen_lock:
+        if _gen_jobs.get(seed_id, {}).get("status") == "running":
+            return jsonify({"error": "Generation already in progress"}), 409
+        _gen_jobs[seed_id] = {"status": "running", "progress": "Starting…", "error": None}
+
+    data = request.get_json(force=True) or {}
+    character = data.get("character", "Ironclad")
+    ascension = int(data.get("ascension", 0))
+    overwrite  = bool(data.get("overwrite", True))
+    seed_value = seed_row["seed_value"]
+
+    def _run():
+        try:
+            with _gen_lock:
+                _gen_jobs[seed_id]["progress"] = "Running sts2-cli…"
+
+            maps = get_all_maps(seed_value, character=character, ascension=ascension)
+
+            with _gen_lock:
+                _gen_jobs[seed_id]["progress"] = "Saving to database…"
+
+            # Build a flat list of nodes across all acts
+            all_nodes = (
+                [(n, "act1") for n in maps["act1"]] +
+                [(n, "act2") for n in maps["act2"]] +
+                [(n, "act3") for n in maps["act3"]]
+            )
+            all_conns_by_act = maps["connections"]
+
+            with get_connection() as conn:
+                if overwrite:
+                    conn.execute("DELETE FROM nodes WHERE seed_id = ?", (seed_id,))
+                    # connections cascade-deleted by FK
+
+                # Insert nodes and build (act, floor, col) → db_id map
+                coord_to_id: dict = {}
+                for node_data, _act_key in all_nodes:
+                    try:
+                        cur = conn.execute(
+                            "INSERT OR IGNORE INTO nodes "
+                            "(seed_id, act, floor, col, node_type) VALUES (?,?,?,?,?)",
+                            (seed_id, node_data["act"], node_data["floor"],
+                             node_data["col"], node_data["node_type"]),
+                        )
+                        if cur.lastrowid:
+                            coord_to_id[
+                                (node_data["act"], node_data["floor"], node_data["col"])
+                            ] = cur.lastrowid
+                    except Exception:
+                        pass
+
+                # Re-query to cover INSERT OR IGNORE cases
+                rows = conn.execute(
+                    "SELECT id, act, floor, col FROM nodes WHERE seed_id = ?", (seed_id,)
+                ).fetchall()
+                for r in rows:
+                    coord_to_id[(r["act"], r["floor"], r["col"])] = r["id"]
+
+                # Insert connections
+                for _act_key, conns in all_conns_by_act.items():
+                    for c in conns:
+                        from_key = tuple(c["from"])
+                        to_key   = tuple(c["to"])
+                        from_id  = coord_to_id.get(from_key)
+                        to_id    = coord_to_id.get(to_key)
+                        if from_id and to_id:
+                            try:
+                                conn.execute(
+                                    "INSERT OR IGNORE INTO connections "
+                                    "(seed_id, from_node_id, to_node_id) VALUES (?,?,?)",
+                                    (seed_id, from_id, to_id),
+                                )
+                            except Exception:
+                                pass
+
+            partial_error = maps.get("error")
+            with _gen_lock:
+                _gen_jobs[seed_id] = {
+                    "status":   "done",
+                    "progress": "Complete",
+                    "error":    partial_error,
+                    "counts": {
+                        "act1": len(maps["act1"]),
+                        "act2": len(maps["act2"]),
+                        "act3": len(maps["act3"]),
+                    },
+                }
+
+        except Exception as e:
+            with _gen_lock:
+                _gen_jobs[seed_id] = {
+                    "status":   "error",
+                    "progress": "Failed",
+                    "error":    str(e),
+                }
+
+    t = threading.Thread(target=_run, daemon=True)
+    t.start()
+
+    return jsonify({"status": "started", "message": "Generation job started"}), 202
+
+
+@app.route("/api/seeds/<int:seed_id>/generate/status", methods=["GET"])
+def generate_status(seed_id):
+    """Poll for the status of a generation job."""
+    with _gen_lock:
+        job = _gen_jobs.get(seed_id)
+    if not job:
+        return jsonify({"status": "idle"}), 200
+    return jsonify(job)
 
 
 # ── Error handlers ────────────────────────────────────────────────────────────

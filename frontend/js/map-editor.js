@@ -7,7 +7,7 @@
  */
 
 const COLS  = 7;
-const ROWS  = 15;
+const ROWS  = 16;  // 15 regular floors + 1 boss floor at the top
 
 // node type → short label shown inside the circle
 const TYPE_LABELS = {
@@ -19,6 +19,7 @@ const TYPE_LABELS = {
   treasure: "TRS",
   boss:     "BOSS",
   ancient:  "ANC",
+  unknown:  "?",
 };
 
 // ── State ─────────────────────────────────────────────────────────────────
@@ -508,6 +509,7 @@ const KEY_TYPE_MAP = {
   t: "treasure",
   b: "boss",
   a: "ancient",
+  u: "unknown",
   c: null, // connect mode toggle
 };
 
@@ -566,6 +568,178 @@ function showToast(msg) {
   toast.style.display  = "block";
   if (toastTimer) clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { toast.style.display = "none"; }, 2000);
+}
+
+// ── Generate from seed ────────────────────────────────────────────────────
+
+const modalGenerate      = document.getElementById("modal-generate");
+const genConfig          = document.getElementById("gen-config");
+const genUnavailable     = document.getElementById("gen-unavailable");
+const genUnavailableMsg  = document.getElementById("gen-unavailable-msg");
+const genProgressWrap    = document.getElementById("gen-progress-wrap");
+const genProgressBar     = document.getElementById("gen-progress-bar");
+const genStatusMsg       = document.getElementById("gen-status-msg");
+const genCounts          = document.getElementById("gen-counts");
+const genPartialWarning  = document.getElementById("gen-partial-warning");
+const genModalError      = document.getElementById("gen-modal-error");
+const genModalActions    = document.getElementById("gen-modal-actions");
+const btnGenStart        = document.getElementById("btn-gen-start");
+const btnGenCancel       = document.getElementById("btn-gen-cancel");
+const btnGenerate        = document.getElementById("btn-generate");
+
+let _genPollTimer = null;
+let _genRunning   = false;
+
+// Wire up generate button
+btnGenerate.addEventListener("click", openGenerateModal);
+btnGenCancel.addEventListener("click", closeGenerateModal);
+modalGenerate.addEventListener("click", (e) => {
+  if (e.target === modalGenerate && !_genRunning) closeGenerateModal();
+});
+btnGenStart.addEventListener("click", startGeneration);
+
+async function openGenerateModal() {
+  // Reset state
+  genConfig.style.display         = "none";
+  genUnavailable.style.display    = "none";
+  genProgressWrap.style.display   = "none";
+  genModalError.style.display     = "none";
+  genCounts.style.display         = "none";
+  genPartialWarning.style.display = "none";
+  btnGenStart.disabled            = false;
+  btnGenStart.textContent         = "Generate";
+  genProgressBar.style.width      = "0%";
+  genStatusMsg.textContent        = "";
+
+  modalGenerate.style.display = "flex";
+
+  // Check availability
+  try {
+    const status = await API.sts2.status();
+    if (status.available) {
+      genConfig.style.display = "block";
+      btnGenStart.disabled    = false;
+    } else {
+      genUnavailable.style.display   = "block";
+      genUnavailableMsg.textContent  = status.message;
+      btnGenStart.disabled           = true;
+    }
+  } catch (err) {
+    genUnavailable.style.display   = "block";
+    genUnavailableMsg.textContent  = "Could not reach server: " + err.message;
+    btnGenStart.disabled           = true;
+  }
+}
+
+function closeGenerateModal() {
+  if (_genPollTimer) { clearInterval(_genPollTimer); _genPollTimer = null; }
+  modalGenerate.style.display = "none";
+  _genRunning = false;
+}
+
+async function startGeneration() {
+  const character  = document.getElementById("gen-character").value;
+  const ascension  = parseInt(document.getElementById("gen-ascension").value) || 0;
+  const overwrite  = document.getElementById("gen-overwrite").checked;
+
+  genConfig.style.display         = "none";
+  genProgressWrap.style.display   = "block";
+  genModalError.style.display     = "none";
+  genCounts.style.display         = "none";
+  genPartialWarning.style.display = "none";
+  btnGenStart.disabled            = true;
+  btnGenCancel.textContent        = "Close";
+  _genRunning = true;
+
+  // Animate indeterminate progress
+  let fakeProgress = 0;
+  const fakeTimer = setInterval(() => {
+    fakeProgress = Math.min(fakeProgress + 1, 85);
+    genProgressBar.style.width = fakeProgress + "%";
+  }, 600);
+
+  try {
+    await API.sts2.generate(seedId, character, ascension, overwrite);
+  } catch (err) {
+    clearInterval(fakeTimer);
+    _genRunning = false;
+    genModalError.textContent    = "Failed to start: " + err.message;
+    genModalError.style.display  = "block";
+    btnGenStart.disabled = false;
+    btnGenStart.textContent = "Retry";
+    genConfig.style.display = "block";
+    genProgressWrap.style.display = "none";
+    return;
+  }
+
+  genStatusMsg.textContent = "Running sts2-cli… this may take 1–3 minutes.";
+
+  // Poll for status
+  _genPollTimer = setInterval(async () => {
+    try {
+      const job = await API.sts2.generateStatus(seedId);
+
+      if (job.status === "running") {
+        genStatusMsg.textContent = job.progress || "Running…";
+        return;
+      }
+
+      clearInterval(_genPollTimer);
+      clearInterval(fakeTimer);
+      _genPollTimer = null;
+      _genRunning   = false;
+      genProgressBar.style.width = "100%";
+
+      if (job.status === "error") {
+        genStatusMsg.textContent    = "Generation failed.";
+        genModalError.textContent   = job.error || "Unknown error";
+        genModalError.style.display = "block";
+        btnGenStart.disabled        = false;
+        btnGenStart.textContent     = "Retry";
+        genConfig.style.display     = "block";
+        return;
+      }
+
+      // Success (done)
+      genStatusMsg.textContent = "Map generated successfully!";
+
+      if (job.counts) {
+        document.getElementById("gen-count-act1").textContent = job.counts.act1 || 0;
+        document.getElementById("gen-count-act2").textContent = job.counts.act2 || 0;
+        document.getElementById("gen-count-act3").textContent = job.counts.act3 || 0;
+        genCounts.style.display = "flex";
+      }
+
+      if (job.error) {
+        genPartialWarning.textContent   = "Partial result: " + job.error;
+        genPartialWarning.style.display = "block";
+      }
+
+      btnGenStart.disabled    = false;
+      btnGenStart.textContent = "Done";
+      btnGenStart.onclick     = () => { closeGenerateModal(); reloadMap(); };
+
+    } catch (e) {
+      // transient poll error — ignore
+    }
+  }, 2000);
+}
+
+async function reloadMap() {
+  // Re-fetch all map data and rebuild the grid
+  try {
+    const data = await API.seeds.get(seedId);
+    nodeMap = {};
+    connections = [];
+    data.nodes.forEach(n => { nodeMap[nodeKey(n.act, n.floor, n.col)] = n; });
+    connections = data.connections;
+    deselectNode();
+    buildGrid();
+    renderConnections();
+    showToast("Map reloaded from database");
+  } catch (err) {
+    showToast("Reload failed: " + err.message);
+  }
 }
 
 // ── Utils ─────────────────────────────────────────────────────────────────

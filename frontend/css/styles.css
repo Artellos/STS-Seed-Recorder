@@ -22,10 +22,11 @@
   --c-treasure: #f1c40f;
   --c-boss:     #7f0000;
   --c-ancient:  #c9a227;
+  --c-unknown:  #4a5568;
 
   --cell-size: 52px;
   --cols: 7;
-  --rows: 15;
+  --rows: 16;
 }
 
 html, body { height: 100%; }
@@ -479,6 +480,7 @@ body.map-page {
 .node-circle.treasure { background: var(--c-treasure); color: #000; }
 .node-circle.boss     { background: var(--c-boss); }
 .node-circle.ancient  { background: var(--c-ancient); color: #000; }
+.node-circle.unknown  { background: var(--c-unknown); border-style: dashed; }
 
 /* ── Node type icons in toolbar ─────────────────────────────────────────── */
 .node-icon {
@@ -497,6 +499,7 @@ body.map-page {
 .node-icon.treasure { background: var(--c-treasure); }
 .node-icon.boss     { background: var(--c-boss); }
 .node-icon.ancient  { background: var(--c-ancient); }
+.node-icon.unknown  { background: var(--c-unknown); }
 
 /* ── SVG Connections ────────────────────────────────────────────────────── */
 .connection-line {
@@ -658,6 +661,88 @@ body.map-page {
 @keyframes fadein {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Generation Progress Modal ──────────────────────────────────────────── */
+.gen-progress-bar-wrap {
+  width: 100%;
+  background: var(--bg2);
+  border-radius: 6px;
+  height: 8px;
+  margin: 16px 0 8px;
+  overflow: hidden;
+}
+
+.gen-progress-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+.gen-status-msg {
+  font-size: 13px;
+  color: var(--text-muted);
+  min-height: 20px;
+  text-align: center;
+}
+
+.gen-counts {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.gen-count-item {
+  text-align: center;
+}
+
+.gen-count-item .count-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.gen-count-item .count-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gen-warning {
+  font-size: 12px;
+  color: #e67e22;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(230,126,34,0.1);
+  border-radius: 6px;
+  border-left: 3px solid #e67e22;
+}
+
+.gen-error {
+  font-size: 12px;
+  color: var(--danger-hover);
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(192,57,43,0.1);
+  border-radius: 6px;
+  border-left: 3px solid var(--danger);
+}
+
+.btn-generate {
+  background: #1a3a1a;
+  color: #4caf50;
+  border-color: #2d5a2d;
+}
+
+.btn-generate:hover { background: #1f4d1f; }
+
+.btn-generate.unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ── Scrollbar ──────────────────────────────────────────────────────────── */

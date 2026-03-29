@@ -16,6 +16,9 @@
       <span id="header-seed-name" class="seed-name-display"></span>
     </div>
     <div class="map-header-actions">
+      <button id="btn-generate" class="btn btn-generate" title="Auto-generate map from seed using sts2-cli">
+        ⚡ Generate from Seed
+      </button>
       <button id="btn-connect-mode" class="btn btn-secondary" title="Toggle connection drawing mode (C)">
         Connect Mode
       </button>
@@ -58,6 +61,9 @@
       <button class="node-type-btn" data-type="ancient"   title="Ancient (A)">
         <span class="node-icon ancient"></span> Ancient
       </button>
+      <button class="node-type-btn" data-type="unknown"   title="Unknown (U)">
+        <span class="node-icon unknown"></span> Unknown
+      </button>
 
       <div class="toolbar-divider"></div>
       <div class="toolbar-hint">
@@ -65,6 +71,7 @@
         <kbd>Click</kbd> node → select<br>
         <kbd>Right-click</kbd> node → menu<br>
         <kbd>C</kbd> → connect mode<br>
+        <kbd>U</kbd> → unknown type<br>
         <kbd>Del</kbd> → delete selected
       </div>
     </aside>
@@ -97,6 +104,7 @@
             <option value="treasure">Treasure</option>
             <option value="boss">Boss</option>
             <option value="ancient">Ancient</option>
+            <option value="unknown">Unknown</option>
           </select>
         </div>
         <div class="detail-row">
@@ -125,6 +133,76 @@
       <li id="ctx-toggle-path">Toggle On Path</li>
       <li id="ctx-delete-node" class="ctx-danger">Delete Node</li>
     </ul>
+  </div>
+
+  <!-- Generate from Seed Modal -->
+  <div id="modal-generate" class="modal-overlay" style="display:none">
+    <div class="modal">
+      <h2>⚡ Generate from Seed</h2>
+
+      <!-- Config form (shown when sts2-cli is available) -->
+      <div id="gen-config" style="display:none">
+        <label>
+          Character
+          <select id="gen-character">
+            <option value="Ironclad">Ironclad</option>
+            <option value="Silent">Silent</option>
+            <option value="Defect">Defect</option>
+            <option value="Regent">Regent</option>
+            <option value="Necrobinder">Necrobinder</option>
+          </select>
+        </label>
+        <label>
+          Ascension Level
+          <input id="gen-ascension" type="number" min="0" max="20" value="0" />
+        </label>
+        <label style="flex-direction:row; align-items:center; gap:10px">
+          <input id="gen-overwrite" type="checkbox" checked style="width:auto" />
+          Clear existing nodes before importing
+        </label>
+      </div>
+
+      <!-- Unavailable notice (shown when sts2-cli is not configured) -->
+      <div id="gen-unavailable" style="display:none">
+        <div class="gen-error" id="gen-unavailable-msg"></div>
+        <p style="margin-top:12px; font-size:13px; color:var(--text-muted)">
+          To enable auto-generation, install
+          <a href="https://github.com/wuhao21/sts2-cli" target="_blank">wuhao21/sts2-cli</a>,
+          run <code>./setup.sh</code>, then set the
+          <code>STS2_CLI_DIR</code> environment variable before starting the server.
+        </p>
+      </div>
+
+      <!-- Progress (shown while running) -->
+      <div id="gen-progress-wrap" style="display:none">
+        <div class="gen-progress-bar-wrap">
+          <div class="gen-progress-bar" id="gen-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="gen-status-msg" id="gen-status-msg">Starting…</div>
+        <div id="gen-counts" class="gen-counts" style="display:none">
+          <div class="gen-count-item">
+            <div class="count-num" id="gen-count-act1">—</div>
+            <div class="count-label">Act 1 nodes</div>
+          </div>
+          <div class="gen-count-item">
+            <div class="count-num" id="gen-count-act2">—</div>
+            <div class="count-label">Act 2 nodes</div>
+          </div>
+          <div class="gen-count-item">
+            <div class="count-num" id="gen-count-act3">—</div>
+            <div class="count-label">Act 3 nodes</div>
+          </div>
+        </div>
+        <div id="gen-partial-warning" class="gen-warning" style="display:none"></div>
+      </div>
+
+      <div id="gen-modal-error" class="form-error" style="display:none"></div>
+
+      <div class="modal-actions" id="gen-modal-actions">
+        <button id="btn-gen-cancel" class="btn btn-secondary">Cancel</button>
+        <button id="btn-gen-start" class="btn btn-primary">Generate</button>
+      </div>
+    </div>
   </div>
 
   <div id="map-loading" class="loading" style="display:none">Loading map…</div>
