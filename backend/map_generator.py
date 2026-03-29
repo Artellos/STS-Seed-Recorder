@@ -86,7 +86,7 @@ class DotNetRandom:
         ii = 0
 
         for i in range(1, 55):
-            ii += 16
+            ii += 21
             if ii >= 55:
                 ii -= 55
             self._seed_array[ii] = mk
@@ -223,7 +223,8 @@ class Rng:
             lst[n], lst[j] = lst[j], lst[n]
 
     def stable_shuffle(self, lst: list):
-        """StableShuffle extension method - Fisher-Yates via Rng.Shuffle."""
+        """StableShuffle extension method - sorts first, then shuffles."""
+        lst.sort()
         self.shuffle(lst)
 
     def unstable_shuffle(self, lst: list):
@@ -655,7 +656,7 @@ def _find_matching_segments(starting_point: MapPoint) -> List[List[List[MapPoint
     segments: Dict[str, List[List[MapPoint]]] = {}
     for path in all_paths:
         _add_segments(path, segments)
-    return [v for v in segments.values() if len(v) > 1]
+    return [v for _, v in sorted(segments.items()) if len(v) > 1]
 
 
 def _is_in_map(grid, p: MapPoint) -> bool:
