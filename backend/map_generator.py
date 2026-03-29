@@ -33,14 +33,29 @@ def _uint32(x: int) -> int:
 
 def get_deterministic_hash_code(s: str) -> int:
     """
-    StringHelper.GetDeterministicHashCode - deterministic string hash.
-    Single-pass djb2 variant starting from h=5381 (matches verified STS2 output).
+    Port of StringHelper.GetDeterministicHashCode from sts2.dll.
+    Dual-accumulator djb2 XOR, .NET Framework x64 string hash pattern.
     Returns a 32-bit signed int.
     """
-    h = 5381
-    for c in s:
-        h = _int32(_int32((h << 5) + h) ^ ord(c))
-    return h
+    hash1 = 352654597            # (5381 << 16) + 5381
+    hash2 = hash1
+    i = 0
+    while i < len(s):
+        hash1 = _int32(_int32((hash1 << 5) + hash1) ^ ord(s[i]))
+        if i == len(s) - 1:
+            break
+        hash2 = _int32(_int32((hash2 << 5) + hash2) ^ ord(s[i + 1]))
+        i += 2
+    return _int32(hash1 + _int32(hash2 * 1566083941))
+
+
+def canonicalize_seed(seed: str) -> str:
+    """Port of SeedHelper.CanonicalizeSeed from sts2.dll."""
+    seed = seed.upper()
+    seed = seed.replace('O', '0')
+    seed = seed.replace('I', '1')
+    seed = seed.strip()
+    return seed
 
 
 # ---------------------------------------------------------------------------
@@ -945,6 +960,7 @@ def generate_all_maps(seed_string: str,
     if acts is None:
         acts = DEFAULT_ACTS
 
+    seed_string = canonicalize_seed(seed_string)
     base_seed = _uint32(get_deterministic_hash_code(seed_string))
 
     result = []
@@ -965,9 +981,24 @@ def generate_all_maps(seed_string: str,
 
 if __name__ == "__main__":
     import sys
-    seed = sys.argv[1] if len(sys.argv) > 1 else "1A2B3C"
+    seed = sys.argv[1] if len(sys.argv) > 1 else "5W2S5P7C17"
+    canonical = canonicalize_seed(seed)
+    hash_val = get_deterministic_hash_code(canonical)
+    base_seed = _uint32(hash_val)
+
+    print(f"Seed: {seed!r} -> canonical: {canonical!r}")
+    print(f"Hash: {hash_val}  (uint: {base_seed})")
+
     maps = generate_all_maps(seed)
     for m in maps:
-        print(f"\n=== {m['act']} ({m['num_rooms']} rooms, {len(m['nodes'])} nodes) ===")
+        print(f"\n=== {m['act']} (act {m['act_index']+1}, {m['num_rooms']} rooms, {len(m['nodes'])} nodes) ===")
+        f1_cols = sorted(n['col'] for n in m['nodes'] if n['row'] == 1)
+        treasure_row = m['num_rooms'] + 1 - 7
+        f_tr_cols = sorted(n['col'] for n in m['nodes'] if n['row'] == treasure_row)
+        rest_row = m['num_rooms']
+        f_rest_cols = sorted(n['col'] for n in m['nodes'] if n['row'] == rest_row)
+        print(f"  Floor 1 cols: {f1_cols}")
+        print(f"  Treasure row ({treasure_row}) cols: {f_tr_cols} ({len(f_tr_cols)} nodes)")
+        print(f"  Rest row ({rest_row}) cols: {f_rest_cols}")
         for n in sorted(m['nodes'], key=lambda x: (x['row'], x['col'])):
             print(f"  row={n['row']:2d} col={n['col']} {n['type']}")
