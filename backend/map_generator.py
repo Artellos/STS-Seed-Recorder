@@ -910,6 +910,18 @@ def generate_act_map(base_seed: int, act_index: int, act_config: ActConfig,
     grid = _straighten_paths(grid)
 
     # Serialize to dict
+    _POINT_TYPE_NAMES = {
+        MapPointType.Ancient:    "ancient",
+        MapPointType.Boss:       "boss",
+        MapPointType.Monster:    "monster",
+        MapPointType.Elite:      "elite",
+        MapPointType.Shop:       "shop",
+        MapPointType.Treasure:   "treasure",
+        MapPointType.RestSite:   "rest",
+        MapPointType.Unknown:    "unknown",
+        MapPointType.Unassigned: "monster",
+    }
+
     nodes = []
     connections = []
     seen_connections = set()
@@ -918,7 +930,7 @@ def generate_act_map(base_seed: int, act_index: int, act_config: ActConfig,
         nodes.append({
             "col": p.col,
             "row": p.row,
-            "type": p.point_type.name,
+            "type": _POINT_TYPE_NAMES.get(p.point_type, p.point_type.name.lower()),
         })
         for child in sorted(p.children):
             key = (p.col, p.row, child.col, child.row)

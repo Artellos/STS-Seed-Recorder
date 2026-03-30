@@ -7,7 +7,7 @@
  */
 
 const COLS  = 7;
-const ROWS  = 16;  // 15 regular floors + 1 boss floor at the top
+const ROWS  = 17;  // 15 regular floors + 1 boss floor at top + 1 ancient floor at bottom
 
 // node type → short label shown inside the circle
 const TYPE_LABELS = {
@@ -95,7 +95,7 @@ function buildGrid() {
   grid.style.setProperty("--rows", ROWS);
 
   for (let rowIdx = 0; rowIdx < ROWS; rowIdx++) {
-    const floor = ROWS - rowIdx; // floor 15 at top, floor 1 at bottom
+    const floor = ROWS - 1 - rowIdx; // floor 16 at top, floor 0 (ancient) at bottom
     for (let col = 0; col < COLS; col++) {
       const cell = document.createElement("div");
       cell.className = "map-cell";
@@ -165,7 +165,7 @@ function renderConnections() {
 
 function cellCenter(floor, col) {
   const CELL = 52; // matches --cell-size CSS var
-  const rowIdx = ROWS - floor; // floor 15 = row 0
+  const rowIdx = ROWS - 1 - floor; // floor 16 = row 0, floor 0 (ancient) = row 16
   const x = col * CELL + CELL / 2;
   const y = rowIdx * CELL + CELL / 2;
   return { x, y };
@@ -415,6 +415,9 @@ function selectNode(node) {
   detailFloorCol.textContent = `Floor ${node.floor}, Col ${node.col + 1}`;
   detailOnPath.checked = !!node.on_path;
   detailNotes.value   = node.notes || "";
+  detailNotes.placeholder = node.node_type === "ancient"
+    ? "Record Ancient choices/upgrades here (e.g., 'Upgrade a card', 'Gain a relic')..."
+    : "Add notes...";
 }
 
 function deselectNode() {
